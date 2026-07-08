@@ -1,0 +1,28 @@
+.DS_Store
+
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+# This repository uses GitHub only as a source remote.
+# Do not commit GitHub-hosted build or automation workflows.
+.github/workflows/
+
+# Local signing, release, and Apple distribution material.
+.env
+.env.*
+*.p8
+*.p12
+*.cer
+*.pem
+*.key
+*.mobileprovision
+*.provisionprofile
+*.xcarchive
+*.dmg
+
+# Local release output.
+artifacts/
+release/
+work/
