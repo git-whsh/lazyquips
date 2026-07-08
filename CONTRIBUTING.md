@@ -1,6 +1,6 @@
 # Contributing
 
-Issues and pull requests are welcome on a best-effort basis. There is no service-level agreement and no obligation to accept or merge a change.
+Pull requests are welcome on a best-effort basis. Public Issues and Discussions are not used for support intake. There is no service-level agreement and no obligation to accept or merge a change.
 
 ## Project Boundaries
 
