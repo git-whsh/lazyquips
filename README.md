@@ -1,5 +1,7 @@
 # Lazy Quips
 
+English | [繁體中文](README.zh-Hant.md) | [简体中文](README.zh-Hans.md) | [日本語](README.ja.md) | [한국어](README.ko.md)
+
 Lazy Quips is a native macOS menu bar app for managing and quickly copying local phrases.
 
 ## Scope
