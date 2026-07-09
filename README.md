@@ -16,6 +16,13 @@ Lazy Quips is a native macOS menu bar app for managing and quickly copying local
 
 Apple Silicon only, macOS 14.0+. This is the stable DMG URL for official GitHub Releases. If it returns 404, no official DMG release is currently available.
 
+Install it from the DMG:
+
+1. Open `LazyQuips-arm64.dmg`.
+2. Drag `Lazy Quips.app` to the `Applications` shortcut in the DMG window.
+3. Eject the DMG.
+4. Launch Lazy Quips from the Applications folder.
+
 An official DMG is official only when it is attached to a published GitHub Release by the repository owner and has passed the release checklist: Developer ID signing, Apple notarization, stapling, and Gatekeeper verification of the downloaded asset.
 
 See the [latest GitHub Release](https://github.com/git-whsh/lazyquips/releases/latest) for release notes and checksums. The fixed checksum asset name is [`LazyQuips-arm64.dmg.sha256`](https://github.com/git-whsh/lazyquips/releases/latest/download/LazyQuips-arm64.dmg.sha256).
