@@ -37,21 +37,11 @@ Lazy Quips 不會讀取目前輸入欄位、不會監控輸入內容、不會讀
 
 只有在使用者明確選擇短語後，App 才會寫入系統 pasteboard。只有在使用者點擊回饋聯絡方式，且 macOS 無法開啟外部聯絡 URL 時，App 才可能寫入 Daniel 的固定聯絡資訊。
 
-## 建置
+## 原始碼建置
 
-需要 macOS 14.0+ 與 Xcode。
+本節僅供檢視原始碼與 fork 開發使用。一般使用者只需從「下載」段落安裝官方 DMG。
 
-```bash
-xcodebuild -project lazyquips.xcodeproj -scheme lazyquips -configuration Debug -destination 'platform=macOS,arch=arm64' -derivedDataPath DerivedData CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY="" DEVELOPMENT_TEAM="" PROVISIONING_PROFILE_SPECIFIER="" build
-```
-
-## 測試
-
-```bash
-xcodebuild -project lazyquips.xcodeproj -scheme lazyquips -configuration Debug -destination 'platform=macOS,arch=arm64' -derivedDataPath DerivedData CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY="" DEVELOPMENT_TEAM="" PROVISIONING_PROFILE_SPECIFIER="" test
-```
-
-公開的 build 與 test 命令會刻意停用 code signing。它們只驗證原始碼編譯與一般測試；不會驗證 sandbox runtime behavior、login item registration、Developer ID signing、notarization、App Store export、TestFlight upload，或任何 official release process。
+如需在本機建置或測試，請在 macOS 14.0+ 使用 Xcode。詳細的未簽署建置與測試命令列在 [CONTRIBUTING.md](CONTRIBUTING.md)。這些命令會刻意停用 code signing，不會產生官方 release build。
 
 ## 授權
 

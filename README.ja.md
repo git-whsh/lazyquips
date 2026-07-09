@@ -37,21 +37,11 @@ Lazy Quips は、現在の入力フィールドの読み取り、入力内容の
 
 このアプリがシステム pasteboard に書き込むのは、ユーザーが明示的にフレーズを選択した後だけです。また、ユーザーがフィードバック連絡先をクリックし、macOS が外部連絡先 URL を開けない場合に限り、Daniel の固定連絡先情報を書き込むことがあります。
 
-## ビルド
+## ソースからのビルド
 
-macOS 14.0+ と Xcode が必要です。
+このセクションは、ソースコードの確認や fork での開発を行う方向けです。Lazy Quips を通常利用するだけであれば、「ダウンロード」セクションから公式 DMG をインストールしてください。
 
-```bash
-xcodebuild -project lazyquips.xcodeproj -scheme lazyquips -configuration Debug -destination 'platform=macOS,arch=arm64' -derivedDataPath DerivedData CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY="" DEVELOPMENT_TEAM="" PROVISIONING_PROFILE_SPECIFIER="" build
-```
-
-## テスト
-
-```bash
-xcodebuild -project lazyquips.xcodeproj -scheme lazyquips -configuration Debug -destination 'platform=macOS,arch=arm64' -derivedDataPath DerivedData CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY="" DEVELOPMENT_TEAM="" PROVISIONING_PROFILE_SPECIFIER="" test
-```
-
-公開ビルドおよびテストコマンドでは、意図的に code signing を無効にしています。これらはソースのコンパイルと通常のテストのみを検証します。sandbox runtime behavior、login item registration、Developer ID signing、notarization、App Store export、TestFlight upload、または公式 release process は検証しません。
+ローカルでは macOS 14.0+ の Xcode で build/test を実行できます。署名なしで実行する詳しい build/test コマンドは [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。これらのコマンドは code signing を無効にしており、official release build は生成しません。
 
 ## ライセンス
 

@@ -37,21 +37,11 @@ Lazy Quips 不会读取当前输入框、不会监控输入内容、不会读取
 
 只有在用户明确选择短语后，App 才会写入系统 pasteboard。只有在用户点击反馈联系方式，且 macOS 无法打开外部联系 URL 时，App 才可能写入 Daniel 的固定联系信息。
 
-## 构建
+## 源代码构建
 
-需要 macOS 14.0+ 与 Xcode。
+本节仅供审阅源代码与 fork 开发使用。普通用户只需从“下载”部分安装官方 DMG。
 
-```bash
-xcodebuild -project lazyquips.xcodeproj -scheme lazyquips -configuration Debug -destination 'platform=macOS,arch=arm64' -derivedDataPath DerivedData CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY="" DEVELOPMENT_TEAM="" PROVISIONING_PROFILE_SPECIFIER="" build
-```
-
-## 测试
-
-```bash
-xcodebuild -project lazyquips.xcodeproj -scheme lazyquips -configuration Debug -destination 'platform=macOS,arch=arm64' -derivedDataPath DerivedData CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY="" DEVELOPMENT_TEAM="" PROVISIONING_PROFILE_SPECIFIER="" test
-```
-
-公开的 build 与 test 命令会刻意停用 code signing。它们只验证源代码编译与普通测试；不会验证 sandbox runtime behavior、login item registration、Developer ID signing、notarization、App Store export、TestFlight upload，或任何 official release process。
+如需在本地构建或测试，请在 macOS 14.0+ 使用 Xcode。详细的未签名构建与测试命令见 [CONTRIBUTING.md](CONTRIBUTING.md)。这些命令会刻意停用 code signing，不会生成官方 release build。
 
 ## 许可证
 

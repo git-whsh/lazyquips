@@ -37,21 +37,11 @@ Lazy Quips does not read the current input field, monitor typed content, read ex
 
 The app writes to the system pasteboard only after the user explicitly chooses a phrase. It may also write Daniel's fixed contact detail only after the user clicks a feedback contact and macOS cannot open the external contact URL.
 
-## Build
+## Source Build
 
-Requires macOS 14.0+ and Xcode.
+This section is for source review and fork development. Regular users should install the official DMG from the Download section.
 
-```bash
-xcodebuild -project lazyquips.xcodeproj -scheme lazyquips -configuration Debug -destination 'platform=macOS,arch=arm64' -derivedDataPath DerivedData CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY="" DEVELOPMENT_TEAM="" PROVISIONING_PROFILE_SPECIFIER="" build
-```
-
-## Test
-
-```bash
-xcodebuild -project lazyquips.xcodeproj -scheme lazyquips -configuration Debug -destination 'platform=macOS,arch=arm64' -derivedDataPath DerivedData CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY="" DEVELOPMENT_TEAM="" PROVISIONING_PROFILE_SPECIFIER="" test
-```
-
-The public build and test commands intentionally disable code signing. They verify source compilation and ordinary tests only; they do not validate sandbox runtime behavior, login item registration, Developer ID signing, notarization, App Store export, TestFlight upload, or any official release process.
+To build or test locally, use Xcode on macOS 14.0+. The unsigned build and test commands are in [CONTRIBUTING.md](CONTRIBUTING.md). They intentionally disable code signing and do not produce an official release build.
 
 ## License
 
