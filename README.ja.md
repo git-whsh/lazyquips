@@ -10,61 +10,52 @@ Lazy Quips は、ローカルのフレーズを管理し、すばやくコピー
 - Apple Silicon 専用 (`arm64`)
 - AppKit 連携ポイントを含むネイティブ SwiftUI アプリ
 - サードパーティ製コード依存なし
-- ネットワーク、アカウント、AI、クラウド同期、自動ペースト、入力監視なし
+- 開発者が運用またはセルフホストするネットワークサービスやバックエンドはなく、アカウント、AI、クラウド同期、分析、テレメトリ、自動ペースト、入力監視もありません。Mac App Store での購入、購入の復元、利用権の確認は、Apple が StoreKit と App Store を通じて処理します。
 
-## ダウンロード
+## 配布
 
-[macOS 版 Lazy Quips をダウンロード](https://github.com/git-whsh/lazyquips/releases/latest/download/LazyQuips-arm64.dmg)
+`v1.0` は、`GPL-3.0-only` で公開された履歴版ソーススナップショットです。既存のソースには引き続きこの履歴ライセンスが適用され、付与済みの権利は取り消されません。`v1.1` 以降の公式 Lazy Quips ビルドはクローズドソースで、Mac App Store または TestFlight のみから配布します。`v1.1+` のソーススナップショットや GitHub DMG は公開しません。
 
-Apple Silicon 専用、macOS 14.0+。これは公式 GitHub Releases 用の安定した DMG URL です。404 が返る場合、現在利用可能な公式 DMG リリースはありません。
+[Mac App Store から Lazy Quips をダウンロード](https://apps.apple.com/app/id6783259528)
 
-DMG からインストールします。
+Apple Silicon 専用、macOS 14.0+。この公開 repository は、確認や fork 開発のために履歴版 `v1.0` ソースのみを保持します。公式の GitHub installer、DMG、checksum ダウンロードは提供しません。
 
-1. `LazyQuips-arm64.dmg` を開きます。
-2. DMG ウィンドウ内で `Lazy Quips.app` を `Applications` ショートカットへドラッグします。
-3. DMG を取り出します。
-4. Applications フォルダから Lazy Quips を起動します。
-
-公式 DMG と見なされるのは、リポジトリ所有者が公開した GitHub Release に添付され、release checklist である Developer ID signing、Apple notarization、stapling、ダウンロード済みアセットの Gatekeeper verification を通過している場合のみです。
-
-リリースノートとチェックサムは [latest GitHub Release](https://github.com/git-whsh/lazyquips/releases/latest) を確認してください。固定チェックサムアセット名は [`LazyQuips-arm64.dmg.sha256`](https://github.com/git-whsh/lazyquips/releases/latest/download/LazyQuips-arm64.dmg.sha256) です。
-
-ソースからのビルドは、確認と開発のためのものです。ローカルの source build は、公式の署名済み DMG と同一ではありません。
+履歴版 `v1.0` ソースからのビルドは、確認と fork 開発のためのものです。ローカルの source build は公式 Lazy Quips ビルドではありません。
 
 ## プライバシーの境界
 
 Lazy Quips は、現在の入力フィールドの読み取り、入力内容の監視、既存のクリップボード内容の読み取り、クリップボードデータのアップロードを行いません。
 
+フレーズおよびクリップボードのデータはアップロードされません。Apple は StoreKit と App Store を通じて購入、購入の復元、利用権の確認を処理し、購入結果と利用権の情報をアプリに返します。
+
 このアプリがシステム pasteboard に書き込むのは、ユーザーが明示的にフレーズを選択した後だけです。また、ユーザーがフィードバック連絡先をクリックし、macOS が外部連絡先 URL を開けない場合に限り、Daniel の固定連絡先情報を書き込むことがあります。
 
-## ソースからのビルド
+## 履歴版ソースからのビルド
 
-このセクションは、ソースコードの確認や fork での開発を行う方向けです。Lazy Quips を通常利用するだけであれば、「ダウンロード」セクションから公式 DMG をインストールしてください。
+このセクションは、公開済みの履歴版 `v1.0` ソースと forks にのみ適用されます。公式 `v1.1+` ソースは公開されません。承認済みの公式ビルドは Mac App Store または TestFlight を通じて配布されます。
 
-ローカルでは macOS 14.0+ の Xcode で build/test を実行できます。署名なしで実行する詳しい build/test コマンドは [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。これらのコマンドは code signing を無効にしており、official release build は生成しません。
+ローカルでは macOS 14.0+ の Xcode で build/test を実行できます。履歴版の公開 build/test コマンドは [CONTRIBUTING.md](https://github.com/git-whsh/lazyquips/blob/main/CONTRIBUTING.md) を参照してください。これらのコマンドは code signing を無効にしており、official release build は生成しません。
 
 ## ライセンス
 
-ソースコードは `GPL-3.0-only` の下でライセンスされています。詳しくは [LICENSE](LICENSE) を参照してください。
+`v1.0` として公開済みのソースには引き続き `GPL-3.0-only` が適用され、付与済みの権利は取り消されません。履歴版の公開 [LICENSE](https://github.com/git-whsh/lazyquips/blob/main/LICENSE) を参照してください。
 
-サードパーティのブランドアセットは、Lazy Quips のメンテナーによって GPL の下でライセンスされているものではありません。詳しくは [NOTICE](NOTICE) を参照してください。
+公式 `v1.1+` ビルドはクローズドソースで、Apple Standard EULA の下で Mac App Store から、またはテスト用に TestFlight から配布されます。これらは新しい GPL ソースリリースではありません。
+
+サードパーティのブランドアセットは、Lazy Quips のメンテナーによって GPL の下でライセンスされているものではありません。履歴版の公開 [NOTICE](https://github.com/git-whsh/lazyquips/blob/main/NOTICE) を参照してください。
 
 ## 公式ビルドと Forks
 
-公開ソースコードは、Lazy Quips の商標、official bundle identifiers、signing identities、または official publishing channels の使用を許可するものではありません。
+公開済みの `v1.0` ソースコードは、Lazy Quips の商標、official bundle identifiers、signing identities、または official publishing channels の使用を許可するものではありません。
 
-公開ソーススナップショットでは、`dev.lazyquips.public` のような placeholder bundle identifiers を使用しています。Official Lazy Quips distribution では、official bundle identifiers、Apple signing identities、App Store/TestFlight distribution、Developer ID signing、notarization、GitHub Release publishing rights を留保します。詳しくは [TRADEMARKS.md](TRADEMARKS.md) を参照してください。
+履歴版の公開 `v1.0` スナップショットでは、`dev.lazyquips.public` のような placeholder bundle identifiers を使用しています。Official Lazy Quips distribution では、official bundle identifiers、Apple signing identities、App Store/TestFlight publishing rights を留保します。履歴版の公開 [TRADEMARKS.md](https://github.com/git-whsh/lazyquips/blob/main/TRADEMARKS.md) を参照してください。
 
-Forks は GPL の下でコードを調査、変更、ビルド、配布できます。変更済み binaries を公開配布する fork は、ユーザーが official builds と区別できるように、独自の app name、bundle identifiers、icons or branding、signing identity、update channel、support channel を使用するべきです。Forks は、それが official Lazy Quips releases であるかのように示唆してはなりません。
+Forks は GPL の下で履歴版 `v1.0` コードを調査、変更、ビルド、配布できます。変更済み binaries を公開配布する fork は、ユーザーが official builds と区別できるように、独自の app name、bundle identifiers、icons or branding、signing identity、update channel、support channel を使用するべきです。Forks は、それが official Lazy Quips releases であるかのように示唆してはなりません。
 
 ## Release Boundary
 
-この公開 repository は、source review、ローカル開発、軽量なコラボレーションのためのものです。Official GitHub Release、App Store、TestFlight、Developer ID、notarization、DMG release processes では、ここに意図的に含めていない非公開の signing および release configuration を使用します。
-
-Official GitHub Release assets は、安定した公開ファイル名 `LazyQuips-arm64.dmg` と `LazyQuips-arm64.dmg.sha256` を使用します。
-
-Official binaries が GitHub Releases と Apple platforms の両方で提供される場合でも、GitHub source と release artifacts が公開 GPL 向けの配布チャネルであり、Apple platform builds は project owner が維持する利便性のためのチャネルです。
+既存の公開 repository は、履歴版 `v1.0` の GPL ソースチャネルです。公式 installer asset は提供しません。公式 `v1.1+` ビルドは Mac App Store または TestFlight のみを使用し、このチャネルでは新しいソーススナップショット、Developer ID build、GitHub DMG を公開しません。公開 repository、Web サイト、既存の Release assets を変更するには、別途承認された remote-release task が必要です。
 
 ## 貢献
 
-Pull requests は best-effort で歓迎します。Public Issues と Discussions はサポート受付には使用していません。service-level agreement はなく、変更を merge する義務もありません。詳しくは [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
+履歴版の公開 `v1.0` スナップショットへの Pull requests は best-effort で歓迎します。Public Issues と Discussions はサポート受付には使用していません。service-level agreement はなく、変更を merge する義務もありません。履歴版の公開 [CONTRIBUTING.md](https://github.com/git-whsh/lazyquips/blob/main/CONTRIBUTING.md) を参照してください。
